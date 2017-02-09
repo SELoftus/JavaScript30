@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+  <!--I added this-->
+  Check the console!
+
+  Click in the browser window before typing or you won't see results.
+<script>
+const pressed = [];
+const secretCode = 'up up down down left right left right a b'; //can't get arrow keys to work with it - yet
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    if(pressed.join('').includes(secretCode)) {
+      console.log('DING DING!');
+      cornify_add();
+    }
+    console.log(pressed);
+  })
+</script>
+</body>
+</html>
