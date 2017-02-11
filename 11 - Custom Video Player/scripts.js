@@ -40,7 +40,7 @@ function scrub(e) {
 }
 
 function goFullScreen() {
-    player.classList.toggle('fullscreen');
+    player.classList.add('fullscreen');
 }
 
 /*Hook up event listeners*/
